@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SingleElectionApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<p class="notice"><%= notice %></p>
+ 	<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+   <% if voter_signed_in? %>
+     <%= link_to('Logout (voter)', destroy_voter_session_path, :method => :delete) %>
+   <% elsif administrator_signed_in? %>
+     <%= link_to('Logout (administrator)', destroy_administrator_session_path, :method => :delete) %>
+   <% else %>
+     <%= link_to('Login (voter)', new_voter_session_path) %> 
+   <% end %>
+
+
+</body>
+</html>

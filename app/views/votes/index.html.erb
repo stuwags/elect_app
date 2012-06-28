@@ -1,0 +1,31 @@
+<h1>Make or View your Vote</h1>
+<h2>Note you can only make one vote, and you cannot change your vote after. Sorry, but you only get one shot at this!</h2>
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @votes.each do |vote| %>
+  <tr>
+    <td><%= link_to 'Show', vote %></td>
+    <!-- <td><%= link_to 'Edit', edit_vote_path(vote) %></td> -->
+<!--     <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
+<% end %>
+</table>
+
+
+		<h3> Here are the votes for candidates </h3> 
+		<%= @votes_for_candidates.each do |candidate_count| %>
+		<%= candidate_count %>
+		<% end %>
+
+
+<br />
+
+<%= link_to 'New Vote', new_vote_path %>
+<br />
+
+
