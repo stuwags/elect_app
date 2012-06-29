@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <h2> This is where you vote for candidates </h2>
+  <h2> Please vote for what you believe to be the most annoying University in the United States! </h2>
   
   <% Candidate.all.each do |candidate| %>
       <%= f.radio_button :candidate_id,candidate.id %>   
